@@ -1,4 +1,7 @@
 #!/bin/sh
 
-chmod a+w /dev/pts/0
-exec lighttpd -D -f /etc/lighttpd/lighttpd.conf
+LOGDIR="/var/log/lighttpd"
+touch $LOGDIR/lighttpd.log
+chmod a+rw $LOGDIR/lighttpd.log
+exec lighttpd -D -f /etc/lighttpd/lighttpd.conf &
+tail -f $LOGDIR/lighttpd.log
