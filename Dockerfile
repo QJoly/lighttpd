@@ -1,10 +1,11 @@
 # Dockerfile for lighttpd
 
-FROM alpine
+FROM alpine:3.18.0
 
-ENV LIGHTTPD_VERSION=1.4.64-r0
+ENV LIGHTTPD_VERSION=1.4.70-r0
 
-RUN apk add --update --no-cache \
+RUN apk update \
+  && apk add --update --no-cache \
 	lighttpd=${LIGHTTPD_VERSION} \
 	lighttpd-mod_auth \
   && rm -rf /var/cache/apk/*
@@ -14,7 +15,7 @@ COPY start.sh /usr/local/bin/
 
 EXPOSE 80
 
+RUN echo "echo "Hello World" >> index.html"
 VOLUME /var/www/localhost/htdocs
-VOLUME /etc/lighttpd
 
 CMD ["start.sh"]
