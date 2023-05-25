@@ -31,10 +31,10 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Login to ghcr
+      - name: Login to Dockerhub
         uses: docker/login-action@v1
         with:
-          username: ${{ github.repository_owner }}
+          username: qjoly
           password: ${{ secrets.DOCKERHUB_PASS }}
           
       - name: Run Buildx
