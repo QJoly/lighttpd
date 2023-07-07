@@ -6,8 +6,7 @@ ENV LIGHTTPD_VERSION=1.4.70-r0
 
 RUN apk update \
   && apk add --update --no-cache \
-	lighttpd=${LIGHTTPD_VERSION} \
-	lighttpd-mod_auth \
+	lighttpd=${LIGHTTPD_VERSION} lighttpd-mod_auth \
   && rm -rf /var/cache/apk/*
 
 COPY etc/lighttpd/* /etc/lighttpd/
