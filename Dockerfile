@@ -2,7 +2,7 @@
 
 FROM alpine:3.18.0
 
-ENV LIGHTTPD_VERSION=1.4.70-r0
+ENV LIGHTTPD_VERSION=1.4.71-r0
 
 RUN apk update \
   && apk add --update --no-cache \
