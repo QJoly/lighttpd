@@ -46,4 +46,4 @@ jobs:
           docker buildx build \
             --platform linux/amd64,linux/arm64,linux/386,linux/arm/v7,linux/arm/v6 \
             --push . \
-            -t qjoly/lighttpd:latest -t "qjoly/lighttpd:${GITHUB_REF#refs/*/}"" -t ghcr.io/qjoly/lighttpd:latest
+            -t "qjoly/lighttpd:${GITHUB_REF#refs/*/}" -t qjoly/lighttpd:latest -t "qjoly/lighttpd:${GITHUB_REF#refs/*/}" -t ghcr.io/qjoly/lighttpd:latest
